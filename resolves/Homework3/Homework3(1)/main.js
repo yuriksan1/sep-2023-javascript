@@ -1,31 +1,33 @@
 // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
-for (let i = 0;i < 10;i++){
-    document.write(`<div>Hello</div>`)
+
+for (let i = 0; i < 10; i++) {
+    document.write(`<div>Hello Yura</div>`)
+}
+// - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
+for(let i = 0;i < 10;i++){
+    document.write(`<div>Hi ${i}</div>`)
 }
 
-// - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
-for (let i = 0;i<10;i++){
-    document.write(`<div>Yura ${i}</div>`);
-}
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
 let i = 0;
-while (i<20){
+while (i < 20){
     document.write(`<h1>World</h1>`)
-    i++;
+    i++
 }
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
 let a = 0;
-while (a<20){
-    document.write(`<h1>Show ${a}</h1>`)
-    a++;
+while (a < 20){
+    document.write(`<h1>Good ${a}</h1>`)
+    a++
 }
+
 //
 // - Використовуючи данні з масиву, за допомоги document.write та циклу
 // побудувати структуру по шаблону
 // Масив:
 //
-    let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
-
+//     let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+//
 // ШАБЛОН:
 //     <ul>
 //         <li>ITEM OF ARRAY</li>
@@ -38,11 +40,13 @@ while (a<20){
 //     </ul>
 //
 // замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву
+let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+
 document.write(`<ul>`)
-for (const item of listOfItems){
+for(const item of listOfItems){
     document.write(`<li>${item}</li>`)
-}
-document.write(`</ul>`)
+    }
+    document.write(`</ul>`)
 
 // -----------------------------------------------
 //
@@ -79,15 +83,18 @@ let products = [
 // <img src="IMAGE" alt="" class="product-image">
 // </div>
 // Замість TITLE PRICE IMAGE - підставити відповідні поля з об'єкту
-for(const product of products){
-    document.write(
-`<div class="product-card">
- <h3 class="product-title">${product.title}.Price - ${product.price}</h3>
- <img src=${product.image} alt=${product.title} class="product-image">
-</div>`
-    )
+//
+for (const item of products){
+    document.write(`
+    <div class="product-card">
+    <h3 class="product-title">${item.title}. Price - ${item.price}</h3>
+    <img src=${item.image} alt=${item.title} class="product-image">
+</div>`)
 }
-// є масив
+
+//
+// --------------------
+//     є масив
 let users = [
     {name: 'vasya', age: 31, status: false},
     {name: 'petya', age: 30, status: true},
@@ -101,59 +108,46 @@ let users = [
     {name: 'olya', age: 31, status: false},
     {name: 'max', age: 31, status: true}
 ];
-// за допомоги циклу вивести:
-// - користувачів зі статусом true
-// for (const user of users){
+// // за допомоги циклу вивести:
+// // - користувачів зі статусом true
+// for (let i = 0;i < users.length;i++){
+//     const user = users[i]
 //     if (user.status === true){
-//     document.write(`<div>${user.name} - ${user.age} - ${user.status}</div>`)
+//         console.log(user)
 //     }
 // }
-
-
-// - користувачів зі статусом false
-// for (const user of users){
+// // - користувачів зі статусом false
+// for (let i = 0;i < users.length;i++){
+//     const user = users[i];
 //     if (user.status === false){
-//         document.write(`<div>${user.name} - ${user.age} - ${user.status}</div>`)
+//         console.log(user)
 //     }
 // }
-// - користувачів які старші за 30 років
-for (const user of users){
-    if (user.age > 30){
-        document.write(`<div>${user.name} - ${user.age}</div>`)
-    }
-}
+//
+// // - користувачів які старші за 30 років
+// for (let i = 0;i < users.length;i++){
+//     const user = users[i];
+//     if (user.age > 30){
+//         console.log(user)
+//     }
+// }
 
-let booksArr = [
-    {
-        title: 'QWERT',
-        page: 333,
-        genre: ['Fantasy'],
-        author: ['Kolya', 'Tamara']
-    },
-    {
-        title: 'QWERTQWT',
-        page: 123,
-        genre: ['Fantasy', 'SCI-FI'],
-        author: ['Kolya']
-    },
-    {
-        title: 'ASD',
-        page: 740,
-        genre: ['Classic'],
-        author: ['Yulia', 'Sveta']
-    },
-    {
-        title: 'QWERTASDQWEEEEEEE',
-        page: 53,
-        genre: ['SCI_FI'],
-        author: ['Petya']
-    }
-];
-//-Знайти найбільшу книжку
-let resultBook = booksArr[0];
-for (const book of booksArr){
-    if (book.page > resultBook?.page){
-        resultBook = book;
+//АБО щоб вивести на екран
+// - користувачів зі статусом true
+for (const item of users) {
+    if (item.status === true) {
+        document.write(`<div>${item.name} - ${item.age} - ${item.status}</div>`)
     }
 }
-console.log(resultBook);
+// - користувачів зі статусом false
+for (const item of users){
+    if (item.status === false){
+        document.write(`<div>${item.name} - ${item.age} - ${item.status}</div>`)
+    }
+}
+// - користувачів які старші за 30 років
+for (const item of users){
+    if (item.age > 30){
+        document.write(`<div>${item.name} - ${item.age} - ${item.status}</div>`)
+    }
+}

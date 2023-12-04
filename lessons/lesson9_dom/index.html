@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <style>
+        /**{*/
+        /*    background:#000 !important;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h1>before</h1>
+    <div id="target" xxx="???" class="point">
+        <!--    augdag-->
+        !!!<b>Lorem ipsum dolor </b>sit amet, consectetur adipisicing elit. Ad, amet architecto ducimus eius eligendi
+        impedit
+        maxime
+        <span>minima nulla</span>, pariatur perspiciatis porro quasi quo recusandae repellat repellendus saepe soluta
+        vero
+        voluptates.
+
+    </div>
+    <div xxx="???" class="point">
+        <!--    augdag-->
+        <b>Lorem ipsum dolor </b>sit amet, consectetur adipisicing elit. Ad, amet architecto ducimus eius eligendi
+        impedit
+        maxime
+        <span>minima nulla</span>, pariatur perspiciatis porro quasi quo recusandae repellat repellendus saepe soluta
+        vero
+        voluptates.
+
+    </div>
+    <div xxx="???" class="point">
+        <!--    augdag-->
+        <b>Lorem ipsum dolor </b>sit amet, consectetur adipisicing elit. Ad, amet architecto ducimus eius eligendi
+        impedit
+        maxime
+        <span>minima nulla</span>, pariatur perspiciatis porro quasi quo recusandae repellat repellendus saepe soluta
+        vero
+        voluptates.
+
+    </div>
+    <h2>after</h2>
+
+
+</div>
+
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+
+<script>
+// let onbj = {
+//     key1:"value"
+// }
+// function ObjCreator(value1){
+//     this.key1 = value1;
+// }
+//
+// let objCreator = new ObjCreator("qwertyu");
+// console.log(objCreator);
+
+// console.log(window.document);
+// console.log(window.document.head);
+//
+// console.log(document.title);
+// document.title="hello yura";
+//
+// console.log(document.scripts[0]);
+
+let wrapList = document.getElementsByClassName("wrap");
+console.log(wrapList);
+let wrap = wrapList[0];
+console.log(wrap);
+
+let points = wrap.getElementsByClassName("point");
+
+console.log(points);
+
+let target = document.getElementById("target");
+
+let divList = document.getElementsByTagName("div");
+console.log(divList);
+
+console.log(wrap.getElementsByTagName("div"));
+
+let children = wrap.children;
+console.log(children);
+
+for (const htmlItem of children){
+    htmlItem.innerText = "xxx";
+
+    htmlItem.style.background = "silver";
+    htmlItem.style.color = "blue";
+    htmlItem.style.color = "red";
+}
+
+//add......4div
+console.log(divList);//10
+
+let pointList = document.querySelector(".point");
+console.log(pointList);//3
+//add 10 .point
+
+let div = document.createElement("div");
+div.classList.add("point");
+div.innerText = "qwertyuio";
+document.body.appendChild(div);
+
+console.log(pointList);// 3
+
+
+
+</script>
+</body>
+</html>

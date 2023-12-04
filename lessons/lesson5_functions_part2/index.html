@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+let foo = function(){
+    console.log("Hello Yura");
+}
+
+foo();
+//...........................
+
+foobar();
+function foobar() {
+    console.log("World"); // Тут є процес всплиття,можна функцію викликати в любому місці.
+}
+
+//.....................................
+
+let calc = (a, b) =>console.log(a + b);
+
+let result = calc(10, 20);
+console.log(result);
+
+//---------------------------------------
+
+function a(arg1) {
+}
+
+a(() => console.log("Hello"));
+
+//.....................................
+
+let foo1 = (...rest) => console.log(rest);//arguments у стрілочний функцій неіснує.
+
+foo1(11, 22, 33);
+
+//......................................
+
+let newFn1 = function (){
+    console.log("fn1");
+}
+
+function newFn2(){
+    console.log("fn2");
+}
+
+let fnArr = [
+    newFn1, newFn2, function () {
+    }, () => console.log("xxx")
+]
+
+fnArr[0](); // Майже не використовується ця функція.(Це приклад)
+
+fnArr[3]();
+
+//.......................................
+
+let xxx = {
+    imya:"kokos",
+    age:123,
+    greeting:function (){
+        console.log("Pruvit my name is - " + this.imya);
+        console.log(this);
+    }
+}
+
+xxx.greeting();
+
+
+let yyy = {
+    name:"abricos",
+    age:12,
+    greeting : () => {
+        console.log("Hi his name - " + name);
+        console.log(this);// Дасть всі параметри браузерного вікна window.
+    }// В об'єктах стрілочні функції краще не використовувати.
+}
+
+yyy.greeting();
+
+//....................................................
+
+let user = {
+    name: "kavun",
+    age:14,
+    greeting(){
+        console.log("hello my name is -" + this.name);
+        console.log(this);
+    },
+    wife:{
+        name:"sadasdsad",
+        greeting:function (){
+            console.log("what " + this.name)
+        }
+    }
+}
+
+user.greeting();
+
+user.wife.greeting();
+
+//......................................................
+
+let loop = (arr) => {
+    for(const arrElement of arr){
+        console.log(arrElement);
+    }
+}
+
+loop([11,22,33])
+
+
+</script>
+</body>
+</html>

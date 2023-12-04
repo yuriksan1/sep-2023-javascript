@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let foo = function (){
+    console.log("qwetyu")
+}
+foo();
+
+
+function foobar(){
+    console.log("do somth");
+}
+
+foobar();//Функція може буди викликана зверху функції
+//
+// //--------------------------------------------------------
+let calc = (a,b) =>{
+    return a + b;
+};
+
+let result = calc(10,20);
+console.log(result);
+
+
+//АБО
+
+let calc1 = (a,b)=> a+b;
+
+let result1 = calc(10,25);
+console.log(result1);
+
+
+let calc2 = (a,b) => console.log(a + b);
+
+let result2 = calc(10,40);
+console.log(result2)
+//--------------------------------------------------------
+function a(arg1){
+
+}
+a(() => console.log("hello"));//Приклад не виводить нічого
+//--------------------------------------------------------
+let foo1 = (...rest) => console.log(rest);
+
+foo1(11,22,33);
+
+//--------------------------------------------------------
+let newFn1 = function (){
+    console.log("fn1");
+}
+
+function newFn2(){
+    console.log("fn2");
+}
+
+let fnArr = [
+    newFn1,
+    newFn2,
+    function (){},
+    () => console.log("xxx")
+];
+
+fnArr[0]();
+fnArr[3]();
+
+//--------------------------------------------------------
+let user = {
+    name:"kokos",
+    age:123,
+    greeting:function (){
+        console.log("hello");
+    }
+}
+
+user.greeting();
+
+
+let xxx = {
+    imya:"Yura",
+    age:24,
+    greeting:function (){
+        console.log("hello my name is - " + this.imya);
+        console.log(this);
+    }
+}
+xxx.greeting();
+
+
+let yyy = {
+    name: "abricos",
+    age:12,
+    greeting:() =>{// в об'єктах стрілочні функції краще не використовувати.
+        console.log("hello my name is -" + name);
+        console.log(this);
+    }
+}
+yyy.greeting();
+
+// console.log(this);
+//--------------------------------------------------------
+let user1 = {
+    name: "kavun",
+    age: 14,
+    greeting() {
+        console.log("hello my name is -" + this.name);
+        console.log(this);
+    },
+    wife: {
+        name:"qwert",
+        greeting: function () {
+            console.log("hello " + this.name);
+
+        }
+    }
+}
+user1.greeting();
+
+user1.wife.greeting();
+//--------------------------------------------------------
+let loop = (arr) =>{
+    for (const arrElement of arr){
+        console.log(arrElement);
+    }
+}
+loop([11,22,33]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
