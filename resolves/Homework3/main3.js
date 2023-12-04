@@ -149,3 +149,11 @@ let booksArr = [
         author: ['Petya']
     }
 ];
+//-Знайти найбільшу книжку
+let resultBook = booksArr[0];
+for (const book of booksArr){
+    if (book.page > resultBook?.page){
+        resultBook = book;
+    }
+}
+console.log(resultBook);
