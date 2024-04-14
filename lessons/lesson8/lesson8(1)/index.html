@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // function User(id,name,age){
+    //     this.id=id;
+    //     this.name=name;
+    //     this.age = age;
+    // }
+    // let user = new User(1,"Yura",25);
+    // let user2 = new User(2,"Oleg",20);
+    //
+    // console.log(user.id);
+    // console.log(user2.name);
+    // console.log(user2.age);
+
+    //-----------------------------------------------------------------------------------------------------------------------------
+    //Агрегація підхід створення
+    // function User(id,name,age,wife){
+    //     this.id=id;
+    //     this.name=name;
+    //     this.age=age;
+    //     this.wife=wife;
+    // }
+    // let user =new User(3,"Karlos",11,{name:"Olya"});
+    //
+    // console.log(user);
+
+    //-----------------------------------------------------------------------------------------------------------------------------
+    //Композиція підхід створення
+    // function User(id,name,age,wifeName,wifeAge){
+    //     this.id=id;
+    //     this.name=name;
+    //     this.age=age;
+    //     this.wife={name:wifeName,age:wifeAge};
+    //
+    // }
+    //     let user = new User(2,"Vasya",33,"Olena",30)
+    //
+    //     console.log(user)
+
+    //-----------------------------------------------------------------------------------------------------------------------------
+    
+    // let u1 = {
+    //     name:'vasya',
+    //     greeting(msg,speak){
+    //         console.log(`${msg} ${speak} ${this.name}`);
+    //     }
+    // }
+    //
+    // u1.greeting("hello","my name is");
+    //
+    // let u2 = {name:"kokos"};
+    //
+    // // u1.greeting.call(u2,"hi","me gusto");
+    // //
+    // // u1.greeting.apply(u2,["holla","we are friends"]);
+    //
+    // let greetingCopy = u1.greeting.bind(u2);
+    //
+    // greetingCopy("1","2");
+    //
+    // // let greetingCopy = u1.greeting.bind(u2,"3","4");
+    // //
+    // // greetingCopy();
+
+    //-----------------------------------------------------------------------------------------------------------------------------
+    // let o = {};
+    // console.log(o);
+    // console.log(o.__proto__);
+    //
+    // let user = {
+    //     id:12,
+    //     name:"Yura"
+    // }
+    // let newUser = Object.create(user);
+    //
+    // console.log(user.id);
+    // console.log(user.name);
+    //
+    //
+    // console.log(newUser.id);
+    // console.log(newUser.name);
+    //
+    // console.log(newUser);
+    //
+    // newUser.name = "kokos";
+    //
+    // console.log(newUser);
+    // console.log(newUser.name);
+
+    //-----------------------------------------------------------------------------------------------------------------------------
+
+    class User {
+        constructor(id,name,age) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+        }
+
+        greeting(){
+            console.log(`hello my name is ${this.name}`)
+        }
+
+        foobar(){
+            return "foobar";
+        }
+    }
+
+    // let user = new User(1,"Yura",40);
+    // console.log(user);
+    // user.greeting();
+    //
+    // console.log(user.foobar())
+    //
+    // console.log(user);
+
+
+    class Client extends User {
+        constructor(id,name,age,login,password) {
+            super(id,name,age);
+            this.login = login;
+            this.password = password;
+        }
+    }
+
+    let client = new Client(2,"Oleg",22,"qwert",123456);
+    console.log(client);
+    console.log(client.foobar());
+
+    //-----------------------------------------------------------------------------------------------------------------------------
+    let date = new Date();
+    console.log(date);//Об'єкт який характеризує дату.
+    console.log(date.getDate());//Виводить дату місяця
+    console.log(date.getDay());//Виводить день тижня
+    console.log(date.getHours());//Виводить годину
+    console.log(date.getMinutes());//Вивидить хвилини
+    console.log(date.getSeconds());//Виводить секунди
+    console.log(date.getMilliseconds());//Виводить мілісекунди
+    console.log(date.getTime());//Виводить мілісикунди від дати створення Юнікс
+    console.log(date.getMonth());//Виводить місяць,але відлік починається від 0 ,а останній місяць буде 11.
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
