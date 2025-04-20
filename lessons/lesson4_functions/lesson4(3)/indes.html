@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function createUlWithLi5() {
+        document.write("<ul>");
+
+        document.write("<li>item</li>");
+        document.write("<li>item</li>");
+        document.write("<li>item</li>");
+        document.write("<li>item</li>");
+        document.write("<li>item</li>");
+
+        document.write("</ul>")
+    }
+
+    // createUlWithLi5();
+
+    function createOlWithLi5() {
+        document.write("<ol>");
+
+        document.write("<li>item</li>");
+        document.write("<li>item</li>");
+        document.write("<li>item</li>");
+        document.write("<li>item</li>");
+        document.write("<li>item</li>");
+
+
+        document.write("</ol>");
+    }
+
+    // createOlWithLi5();
+
+    function foobar() {
+        createUlWithLi5();
+        createOlWithLi5();
+    }
+
+    foobar();
+    foobar();
+    foobar();
+
+    console.log("-------------------------------------------------");
+    function iterator (array) {
+        for (const item of array){
+            console.log(item);
+        }
+    }
+    iterator([111,222,333]);
+
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
+
+    iterator(users);
+    console.log("-------------------------------------------------");
+    // довжину circle
+    // pr2
+
+    function circleSquare (radius){
+        let res = radius * radius * Math.PI;
+        return res;
+    }
+
+    let x = circleSquare(10);
+    console.log(x);
+
+    let y = circleSquare(22);
+    console.log(y);
+    console.log("-------------------------------------------------");
+    function nazva() {
+        // arguments - масив всіх визначених аргументів
+        console.log(arguments);
+    }
+    nazva(11,"hello",false);
+
+    nazva("qwe",true,444);
+
+    console.log("-------------------------------------------------");
+
+    function foo() {
+        if (arguments.length === 1){
+            return "Ви ввели 1 число"
+        }else if (arguments.length === 2){
+            return "Ви ввели 2 числа"
+        }else {
+            return "Ви ввели 3 або більше чисел"
+        }
+    }
+
+    let q = foo(1);
+    console.log(q);
+
+    let w = foo(2,3,4);
+    console.log(w);
+
+    console.log("-------------------------------------------------");
+    function poipoi() {
+        console.log('a');
+    }
+
+    function poipoi(){
+        console.log('b')
+    }
+
+    poipoi();
+    console.log("-------------------------------------------------");
+
+    function meteor(a,b,...items) {
+        console.log(a,b,items);
+    }
+
+    meteor(11,22,33,44,55);
+    console.log("-------------------------------------------------");
+
+    function getDayName (dayNumber){
+        let dayName;
+
+        switch (dayNumber) {
+            case 1 :
+                dayName = "Понеділок";
+                break;
+            case 2:
+                dayName = "Вівторок";
+                break;
+            case 3 :
+                dayName = "Середа";
+                break;
+            case 4 :
+                dayName = "Четвер";
+                break;
+            case 5 :
+                dayName = "П'ятниця";
+                break;
+            case 6 :
+                dayName = "Субота";
+                break;
+            case 7 :
+                dayName = "Неділя";
+                break;
+            default:
+                dayName = "Невірний день тижня";
+
+        }
+        return dayName;
+    }
+
+    console.log(getDayName(2));
+    console.log("-------------------------------------------------");
+
+    let arr = [];
+    
+    function pushRandomToArr() {
+        arr[arr.length] = Math.round(Math.random() * 10);
+    }
+
+    pushRandomToArr()
+    pushRandomToArr()
+    pushRandomToArr()
+    pushRandomToArr()
+
+    console.log(arr);
+
+    console.log("-------------------------------------------------");
+    function generateArray(size) {
+        let arr = [];
+        for (let i = 0;i < size;i++){
+            arr[arr.length] = Math.round(Math.random() * 10);
+        }
+        return arr;
+    }
+
+    console.log(generateArray(10));
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
